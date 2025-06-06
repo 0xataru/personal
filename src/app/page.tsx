@@ -5,10 +5,12 @@ import TechStackSection from "@/components/sections/TechStackSection";
 import ProjectsSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/ui/Footer";
+import AnimeCharacters from "@/components/ui/AnimeCharacters";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
+      <AnimeCharacters />
       <Header />
       <MainLayout>
         <AboutSection />

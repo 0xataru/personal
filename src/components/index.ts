@@ -1,6 +1,7 @@
 // UI Components
 export { default as Header } from "./ui/Header";
 export { default as Footer } from "./ui/Footer";
+export { default as AnimeCharacters } from "./ui/AnimeCharacters";
 
 // Layout Components
 export { default as MainLayout } from "./layout/MainLayout";
