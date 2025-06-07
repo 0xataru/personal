@@ -7,7 +7,7 @@ export default function AboutSection() {
               <div className="bg-gray-900/50 backdrop-blur rounded-lg p-8 border border-gray-800">
           <div className="space-y-4">
             <p className="text-gray-300 text-lg leading-relaxed">
-              Hello there! My name is <span className="text-white font-semibold">Mark</span>, I&apos;ve been living on Earth for ~30 years, and I am a software engineer with a passion for <span className="text-white font-medium">blazing fast software</span>! 
+              Hello there! My name is <span className="text-white font-semibold">Mark</span>, I&apos;ve been living on Earth for ~30 years, and I am a software engineer with a passion for <span className="text-white font-medium">blazing fast technologies 🦀</span> 
             </p>
             
             <p className="text-gray-300 leading-relaxed">
