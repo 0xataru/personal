@@ -3,89 +3,85 @@
 export default function AnimeCharacters() {
   const characters = [
     {
-      id: 'frieren',
-      name: 'Frieren',
-      anime: 'Sousou no Frieren',
-      imageUrl: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9e45b8c2-f55b-45e5-8ad4-b19e6b2b6dcb/dg2oqjh-b1a8b347-8651-4be8-83e5-1b5c4c7a0d7e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzllNDViOGMyLWY1NWItNDVlNS04YWQ0LWIxOWU2YjJiNmRjYlwvZGcyb3FqaC1iMWE4YjM0Ny04NjUxLTRiZTgtODNlNS0xYjVjNGM3YTBkN2UucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0',
+      id: 'character1',
+      name: 'Character 1',
+      anime: 'Anime',
+      imageUrl: '/anime-characters/char1.png',
       position: 'left-8 top-20',
     },
     {
-      id: 'akame',
-      name: 'Akame',
-      anime: 'Akame ga Kill!',
-      imageUrl: 'https://www.pngmart.com/files/23/Akame-PNG-Transparent-Image.png',
-      position: 'right-8 top-32',
+      id: 'character2',
+      name: 'Character 2',
+      anime: 'Anime',
+      imageUrl: '/anime-characters/char2.png',
+      position: 'right-8 top-20',
     },
     {
-      id: 'nezuko',
-      name: 'Nezuko',
-      anime: 'Demon Slayer',
-      imageUrl: 'https://www.pngall.com/wp-content/uploads/13/Nezuko-PNG-Pic.png',
-      position: 'left-12 bottom-40',
+      id: 'character3',
+      name: 'Character 3',
+      anime: 'Anime',
+      imageUrl: '/anime-characters/char3.png',
+      position: 'left-8 bottom-20',
     },
     {
-      id: 'anya',
-      name: 'Anya Forger',
-      anime: 'Spy x Family',
-      imageUrl: 'https://www.pngmart.com/files/23/Anya-Forger-PNG-Picture.png',
-      position: 'right-12 bottom-20',
+      id: 'character4',
+      name: 'Character 4',
+      anime: 'Anime',
+      imageUrl: '/anime-characters/char4.png',
+      position: 'right-8 bottom-20',
     },
   ];
 
   return (
-    <div className="hidden xl:block fixed inset-0 pointer-events-none z-0">
+    <div className="fixed inset-0 pointer-events-none z-10 xl:block hidden">
       {characters.map((character) => (
         <div
           key={character.id}
-          className={`absolute ${character.position} opacity-20 hover:opacity-40 transition-all duration-500 pointer-events-auto`}
-          style={{
-            background: `radial-gradient(circle at center, rgba(99, 102, 241, 0.05) 0%, transparent 70%)`,
-          }}
+          className={`absolute ${character.position} group`}
         >
-          <div className="relative group">
-            <div className="animate-float">
-              <img
-                src={character.imageUrl}
-                alt={character.name}
-                className="w-32 h-40 object-contain drop-shadow-lg"
-                onError={(e) => {
-                  // Fallback to emoji if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'block';
-                }}
-              />
-              <div className="hidden text-6xl">
-                {character.id === 'frieren' && '🧙‍♀️'}
-                {character.id === 'akame' && '⚔️'}
-                {character.id === 'nezuko' && '👹'}
-                {character.id === 'anya' && '🔮'}
-              </div>
-            </div>
+          {/* Character Image */}
+          <div className="relative">
+            <img
+              src={character.imageUrl}
+              alt={character.name}
+              className="w-48 h-56 object-contain opacity-80 group-hover:opacity-95 transition-opacity duration-300 animate-float drop-shadow-2xl"
+              onError={(e) => {
+                // Fallback к эмодзи если изображение не загрузится
+                e.currentTarget.style.display = 'none';
+                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'block';
+              }}
+            />
             
-            {/* Floating particles */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(3)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-1 h-1 bg-purple-400 rounded-full opacity-30"
-                  style={{
-                    left: `${20 + i * 30}%`,
-                    top: `${30 + i * 20}%`,
-                    animation: `float ${3 + i}s ease-in-out infinite`,
-                    animationDelay: `${i * 0.5}s`,
-                  }}
-                />
-              ))}
+            {/* Fallback эмодзи (скрыт по умолчанию) */}
+            <div 
+              className="w-48 h-56 flex items-center justify-center text-8xl animate-float drop-shadow-2xl opacity-80 group-hover:opacity-95 transition-opacity duration-300"
+              style={{ display: 'none' }}
+            >
+              {character.id === 'character1' && '✨'}
+              {character.id === 'character2' && '🌟'}
+              {character.id === 'character3' && '💫'}
+              {character.id === 'character4' && '⭐'}
             </div>
 
-            {/* Tooltip */}
-            <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap">
-              <div className="font-semibold">{character.name}</div>
-              <div className="text-xs text-gray-300">{character.anime}</div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900/90" />
+            {/* Градиентный фон */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/15 to-pink-500/15 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-300" />
+            
+            {/* Плавающие частицы */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 left-0 w-3 h-3 bg-white/40 rounded-full animate-ping" style={{ animationDelay: '0s' }} />
+              <div className="absolute top-6 right-3 w-2 h-2 bg-purple-300/50 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+              <div className="absolute bottom-3 left-6 w-2.5 h-2.5 bg-pink-300/40 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
             </div>
+          </div>
+
+          {/* Tooltip */}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <div className="bg-gray-900/90 text-white text-sm px-4 py-2 rounded-lg backdrop-blur-sm">
+              <div className="font-semibold">{character.name}</div>
+              <div className="text-gray-300 text-xs">{character.anime}</div>
+            </div>
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900/90" />
           </div>
         </div>
       ))}
