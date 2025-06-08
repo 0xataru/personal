@@ -13,7 +13,7 @@ export default function Header() {
           Mark Raiter
         </h1>
         <p className="text-3xl lg:text-4xl text-gray-300 mb-12 font-light tracking-wide">
-          rationalist | swe | anime fan
+          Rationalist | Software Engineer | Anime Fan
         </p>
         <div className="flex justify-center gap-6 mt-8">
           <div className="px-8 py-4 bg-purple-600/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
