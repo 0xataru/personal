@@ -1,7 +1,6 @@
 import Header from "@/components/ui/Header";
 import MainLayout from "@/components/layout/MainLayout";
 import AboutSection from "@/components/sections/AboutSection";
-import TechStackSection from "@/components/sections/TechStackSection";
 import ProjectsSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/ui/Footer";
@@ -12,7 +11,6 @@ export default function Home() {
       <Header />
       <MainLayout>
         <AboutSection />
-        <TechStackSection />
         <ProjectsSection />
         <ContactSection />
       </MainLayout>

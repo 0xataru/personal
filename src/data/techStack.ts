@@ -1,38 +1,51 @@
 export interface TechItem {
   name: string;
-  category: "Frontend" | "Backend" | "Tools";
+  category: "Languages" | "Frontend" | "Backend" | "Testing" | "Tools";
 }
 
 export interface TechCategory {
   name: string;
   icon: string;
   color: string;
+  borderColor: string;
   technologies: string[];
 }
 
 export const techStackData: Record<string, TechCategory> = {
-  Frontend: {
-    name: "Frontend",
-    icon: "🎨",
-    color: "bg-blue-500",
+  Languages: {
+    name: "Languages",
+    icon: "💻",
+    color: "bg-gradient-to-r from-blue-500 to-cyan-500",
+    borderColor: "border-blue-500",
     technologies: [
-      "React", "TypeScript", "JavaScript", "Redux", "Next.js", "Tailwind CSS"
+      "Rust", "Go", "Typescript/Javascript", "Python"
     ]
   },
   Backend: {
     name: "Backend",
     icon: "⚙️",
-    color: "bg-green-500", 
+    color: "bg-gradient-to-r from-orange-500 to-red-500", 
+    borderColor: "border-orange-500",
     technologies: [
-      "Rust", "Go", "Python", "Java", "C++", "PostgreSQL", "MySQL", "Redis"
+      "Go (fiber, gorm)", "Rust (actix-web, sqlx)", "REST", "gRPC", "Postgres", "Mongo", "Redis", "Nginx"
+    ]
+  },
+  Frontend: {
+    name: "Frontend",
+    icon: "🎨",
+    color: "bg-gradient-to-r from-green-500 to-emerald-500",
+    borderColor: "border-green-500",
+    technologies: [
+      "React", "Redux", "Next", "CSS", "Webpack", "tailwindcss"
     ]
   },
   Tools: {
     name: "Tools",
     icon: "🛠️",
-    color: "bg-purple-500",
+    color: "bg-gradient-to-r from-indigo-500 to-purple-500",
+    borderColor: "border-indigo-500",
     technologies: [
-      "Git", "GitHub", "Terraform", "Helm", "Docker", "Kubernetes", "Linux", "Google Cloud"
+      "Git", "GitHub", "GitLab", "CI/CD", "Linux", "Docker", "Kubernetes", "Terraform", "Helm", "Jira"
     ]
   }
 }; 

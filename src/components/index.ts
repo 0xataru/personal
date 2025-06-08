@@ -2,6 +2,9 @@
 export { default as Header } from "./ui/Header";
 export { default as Footer } from "./ui/Footer";
 export { default as AnimeCharacters } from "./ui/AnimeCharacters";
+export { default as SkillsAnimeCharacters } from "./ui/SkillsAnimeCharacters";
+export { default as TechChip } from "./ui/TechChip";
+export { default as TechChipGroup } from "./ui/TechChipGroup";
 
 // Layout Components
 export { default as MainLayout } from "./layout/MainLayout";
