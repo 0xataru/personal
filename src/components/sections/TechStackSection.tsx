@@ -9,7 +9,6 @@ export default function TechStackSection() {
       <div className="grid md:grid-cols-3 gap-4">
         {Object.values(techStackData).map((category) => (
           <div key={category.name} className="bg-gray-900/50 backdrop-blur rounded-lg p-4 border border-gray-800">
-            {/* Header with badge */}
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">{category.icon}</span>
               <h3 className="text-lg font-semibold text-white">{category.name}</h3>
@@ -18,7 +17,6 @@ export default function TechStackSection() {
               </span>
             </div>
             
-            {/* Technologies grid */}
             <div className="grid grid-cols-2 gap-1">
               {category.technologies.map((tech) => (
                 <span
