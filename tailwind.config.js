@@ -6,6 +6,10 @@ export const content = [
 ];
 export const theme = {
     extend: {
+        screens: {
+            'xs': '475px',
+            '3xl': '1600px',
+        },
         colors: {
             background: "var(--background)",
             foreground: "var(--foreground)",
@@ -13,6 +17,14 @@ export const theme = {
         fontFamily: {
             sans: ["var(--font-geist-sans)"],
             mono: ["var(--font-geist-mono)"],
+            inter: ["var(--font-inter)"],
+        },
+        fontSize: {
+            'xxs': '0.625rem',
+        },
+        spacing: {
+            '18': '4.5rem',
+            '88': '22rem',
         },
     },
 };
