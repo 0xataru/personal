@@ -10,22 +10,22 @@ export default function AnimeCharacters() {
     {
       id: 'character1',
       imageUrl: '/anime-characters/char1.png',
-      position: 'left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2',
+      position: 'left-1 sm:left-2 lg:left-8 top-3/4 sm:top-1/2 -translate-y-1/2',
     },
     {
       id: 'character2',
       imageUrl: '/anime-characters/char2.png',
-      position: 'right-2 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2',
+      position: 'right-1 sm:right-2 lg:right-8 top-3/4 sm:top-1/2 -translate-y-1/2',
     },
     {
       id: 'character3',
       imageUrl: '/anime-characters/char3.png',
-      position: 'left-1/4 top-1/2 -translate-y-1/2 -translate-x-1/2 hidden sm:block',
+      position: 'left-1 sm:left-1/4 top-1/4 sm:top-1/2 -translate-y-1/2 sm:-translate-x-1/2',
     },
     {
       id: 'character4',
       imageUrl: '/anime-characters/char4.png',
-      position: 'right-1/4 top-1/2 -translate-y-1/2 translate-x-1/2 hidden sm:block',
+      position: 'right-1 sm:right-1/4 top-1/4 sm:top-1/2 -translate-y-1/2 sm:translate-x-1/2',
     },
   ];
 
@@ -51,7 +51,7 @@ export default function AnimeCharacters() {
           key={character.id}
           className={`absolute ${character.position} group transition-all duration-[2000ms] ease-in-out transform-gpu ${
             index === visibleCharacter 
-              ? 'opacity-85 scale-100' 
+              ? 'opacity-70 sm:opacity-85 scale-100' 
               : 'opacity-0 scale-95'
           }`}
         >

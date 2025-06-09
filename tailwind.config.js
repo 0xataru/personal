@@ -7,7 +7,7 @@ export const content = [
 export const theme = {
     extend: {
         screens: {
-            'xs': '475px',
+            'xs': '430px',
             '3xl': '1600px',
         },
         colors: {
