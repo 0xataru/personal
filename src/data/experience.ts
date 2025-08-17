@@ -17,7 +17,15 @@ export const featuredProjects: ProjectItem[] = [
     color: "bg-orange-500"
   },
   {
-    title: "cardcheck", 
+    title: "ascii-rs",
+    description: "simple ascii converter written in rust",
+    language: "Rust",
+    stars: 1,
+    url: "https://github.com/0xataru/ascii-rs",
+    color: "bg-yellow-500"
+  },
+  {
+    title: "cardcheck",
     description: "Simple validator for credit card number and expiration date",
     language: "Go",
     stars: 2,
@@ -27,7 +35,7 @@ export const featuredProjects: ProjectItem[] = [
   {
     title: "go_scheduler",
     description: "Lightweight and efficient task scheduler for Go applications with future execution",
-    language: "Go", 
+    language: "Go",
     url: "https://github.com/0xataru/go_scheduler",
     color: "bg-green-500"
   },
@@ -35,7 +43,7 @@ export const featuredProjects: ProjectItem[] = [
     title: "go_eventmanager",
     description: "Thread-safe event management system implementing publish-subscribe pattern",
     language: "Go",
-    url: "https://github.com/0xataru/go_eventmanager", 
+    url: "https://github.com/0xataru/go_eventmanager",
     color: "bg-purple-500"
   }
 ]; 
