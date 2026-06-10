@@ -3,6 +3,14 @@ import { TechChipGroup, SkillsAnimeCharacters } from "@/components";
 import Link from "next/link";
 
 const skillCategories = Object.values(techStackData);
+const TOP_ROW_COUNT = 3;
+
+function getSkillGridClass(index: number): string {
+  if (index < TOP_ROW_COUNT) {
+    return "xl:col-span-2";
+  }
+  return "xl:col-span-3";
+}
 
 function SkillSection({ category }: { category: typeof skillCategories[0] }) {
   return (
@@ -36,11 +44,9 @@ export default function SkillsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
           {skillCategories.map((category, index) => (
-            <div key={category.name} className={`${
-              skillCategories.length === 4 && index === 3 ? 'xl:col-start-2' : ''
-            }`}>
+            <div key={category.name} className={getSkillGridClass(index)}>
               <SkillSection category={category} />
             </div>
           ))}

@@ -24,7 +24,7 @@ export default function ContactSection() {
             GitHub
           </a>
           <a
-            href="mailto:0xataru.rs@gmail.com"
+            href="mailto:raitermark@proton.me"
             className="px-4 sm:px-5 lg:px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base min-h-[44px]"
           >
             <EmailIcon />
