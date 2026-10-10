@@ -108,7 +108,7 @@ export const experience: ExperienceItem[] = [
     start: "Dec 2024",
     end: "Jan 2026",
     project:
-      "Multi-Tenant B2B SaaS CRM Platform for commerce businesses (10+ tenants, one processing 1,000-1,200 orders/day)",
+      "Multi-Tenant B2B SaaS CRM Platform for commerce businesses (10+ tenants, processing ~12000 orders/day)",
     stack: [
       "Go (Fiber)",
       "Rust (Axum)",

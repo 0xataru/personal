@@ -1,8 +1,10 @@
 import { ArrowUpRight, Download, Mail, Star } from "lucide-react";
 import Portrait from "@/components/Portrait";
+import StarCount from "@/components/StarCount";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/BrandIcons";
 import { experience, links, profile, skills } from "@/data/cv";
 import { featuredProjects } from "@/data/projects";
+import { getStars } from "@/lib/github";
 
 const nav = [
   { href: "#about", label: "about" },
@@ -47,8 +49,14 @@ function Section({
   );
 }
 
-export default function Home() {
+export default async function Home() {
   const siteSkills = skills.filter((g) => g.onSite);
+  const liveStars = await getStars(featuredProjects.map((p) => p.url));
+  const projects = featuredProjects.map((p) => ({
+    ...p,
+    stars: liveStars[p.url] ?? p.stars,
+  }));
+  const totalStars = projects.reduce((sum, p) => sum + (p.stars ?? 0), 0);
 
   return (
     <div className="min-h-screen bg-ink text-paper">
@@ -195,8 +203,16 @@ export default function Home() {
         </Section>
 
         <Section id="projects" index="03" title="Projects">
+          <p className="mb-6 flex items-center gap-2 font-mono text-xs text-muted">
+            <Star className="size-3.5 fill-accent text-accent" strokeWidth={1.75} />
+            <span className="text-paper">
+              <StarCount value={totalStars} />
+            </span>
+            stars across {projects.length} repos
+            <span className="text-faint">/ live from GitHub</span>
+          </p>
           <ul className="border-t border-line">
-            {featuredProjects.map((p) => (
+            {projects.map((p) => (
               <li key={p.title} className="border-b border-line">
                 <a
                   href={p.url}
@@ -218,12 +234,18 @@ export default function Home() {
                       />
                       {p.language}
                     </span>
-                    {p.stars ? (
-                      <span className="inline-flex items-center gap-1">
-                        <Star className="size-3" strokeWidth={1.75} />
-                        {p.stars}
+                    {p.stars !== undefined && (
+                      <span
+                        className="inline-flex items-center gap-1"
+                        title={`${p.stars} ${p.stars === 1 ? "star" : "stars"} on GitHub`}
+                      >
+                        <Star
+                          className="size-3 transition-[fill,color,transform] duration-300 group-hover:rotate-[72deg] group-hover:scale-125 group-hover:fill-accent group-hover:text-accent"
+                          strokeWidth={1.75}
+                        />
+                        <StarCount value={p.stars} />
                       </span>
-                    ) : null}
+                    )}
                     <ArrowUpRight
                       className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
                       strokeWidth={1.5}
